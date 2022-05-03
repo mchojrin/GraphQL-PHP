@@ -1,5 +1,19 @@
 {
+  "description": "A POC of how to integrate GraphQL into PHP",
+  "authors": [
+    {
+      "name": "Mauro Chojrin",
+      "email": "mauro.chojrin@leewayweb.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "" : "src"
+    }
+  },
   "require": {
+    "ext-mbstring": "*",
+    "php": "8.1",
     "webonyx/graphql-php": "14.10.0"
   }
 }

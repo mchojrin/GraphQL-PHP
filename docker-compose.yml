@@ -3,19 +3,6 @@
 ###############################################################################
 version: '3.1'
 services:
-    mariadb:
-        image: 'mariadb:10.6'
-        working_dir: /application
-        volumes:
-            - './application:/application'
-        environment:
-            - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_DATABASE=graphql
-            - MYSQL_USER=graphql
-            - MYSQL_PASSWORD=graphql
-        ports:
-            - '54003:3306'
-
     webserver:
         image: 'nginx:alpine'
         working_dir: /application

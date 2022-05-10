@@ -99,15 +99,15 @@ $queryType = new ObjectType([
                     ]
                 ],
                 'resolve' => function ($rootValue, array $args) use ($users, $countries): array {
-                    $theUser = array_filter($users, function($user) use ($args) {
+                    $theUser = current(array_filter($users, function($user) use ($args) {
 
                         return $args['id'] == $user['id'];
-                    })[0];
+                    }));
 
-                    $theCountry = array_filter($countries, function($country) use ($theUser) {
+                    $theCountry = current(array_filter($countries, function($country) use ($theUser) {
 
                         return $country['id'] == $theUser['countryId'];
-                    })[0];
+                    }));
 
                     $theUser['country'] = $theCountry;
 
